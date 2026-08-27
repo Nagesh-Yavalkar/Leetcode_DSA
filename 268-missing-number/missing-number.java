@@ -1,11 +1,7 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int missing = nums.length;
+      int n = nums.length;
+      return (n*(n+1)/2)-Arrays.stream(nums).sum();
 
-        for (int i = 0; i < nums.length; i++) {
-            missing ^= i ^ nums[i];
-        }
-
-        return missing;
     }
 }
